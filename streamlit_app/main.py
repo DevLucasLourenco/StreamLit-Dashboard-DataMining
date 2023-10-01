@@ -13,7 +13,7 @@ class DataMining():
 
 
     def ler_tratar_dataframe(self):
-        self.dataframe = pd.read_csv('supermarket_sales.csv', sep=';', decimal=',')
+        self.dataframe = pd.read_csv('streamlit_app/supermarket_sales.csv', sep=';', decimal=',')
         self.dataframe['Date'] = pd.to_datetime(self.dataframe['Date'])
         self.dataframe['Month'] = self.dataframe['Date'].apply(lambda x: f'{str(x.year)} - {str(x.month)}')
         self.dataframe = self.dataframe.sort_values('Date')
